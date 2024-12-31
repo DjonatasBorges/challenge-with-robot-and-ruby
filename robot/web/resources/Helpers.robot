@@ -1,14 +1,12 @@
 *** Settings ***
 Documentation        Test Helpers
 
-Resource    ../resource/Database.robot
-Resource   ../resource/Base.robot
+Resource   ../resources/Base.robot
 
 *** Keywords ***
-Do Login
-    [Arguments]        ${user}
-
-    Go to Login Page
-    Fill Credentials    ${user}
-    Submit Credentials
-    User Should Be Logged in    ${user}
+Dado que eu esteja logado
+    ${user}                   Create Dictionary        user=Admin        password=admin123
+    Dado que estou na tela de Login
+    Quando eu informo um usuário e senha válidos
+    E submeto o login
+    Então devo ser autenticado e visualizar o Dashboard

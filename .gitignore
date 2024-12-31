@@ -1,0 +1,97 @@
+# --------------------------------------------------------------------
+# GERAL (SISTEMAS OPERACIONAIS / EDITORES)
+# --------------------------------------------------------------------
+# Arquivos temporários gerados pelo sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Pastas/arquivos de configurações locais (ex: VSCode, PyCharm)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --------------------------------------------------------------------
+# PYTHON
+# --------------------------------------------------------------------
+# Compiled bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuição/empacotamento
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.installed.cfg
+
+# Instalação de pacotes via pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Configurações de ambientes virtuais
+venv/
+.venv/
+ENV/
+env/
+venv.bak/
+venv.bak.zip
+venv.bak.tar.gz
+
+# Arquivos gerados por PyInstaller
+*.spec
+*.manifest
+
+# Cobertura de teste
+htmlcov/
+.coverage
+.tox/
+.nox/
+.coverage.*
+
+# --------------------------------------------------------------------
+# ROBOT FRAMEWORK
+# --------------------------------------------------------------------
+# Resultados padrão (gerados por execuções do Robot Framework)
+output.xml
+log.html
+report.html
+xunit.xml
+debug.log
+
+# Caso utilize nomenclaturas personalizadas para outputs do Robot:
+# *.xml
+# *.html
+
+# --------------------------------------------------------------------
+# ROBOT FRAMEWORK BROWSER
+# --------------------------------------------------------------------
+# Possíveis diretórios de artefatos (prints, downloads, etc.)
+# Ajuste conforme suas preferências/projeto
+browser/
+downloads/
+screenshots/
+
+# --------------------------------------------------------------------
+# OUTRAS CONFIGURAÇÕES OPCIONAIS
+# --------------------------------------------------------------------
+# Se estiver usando Node.js (alguns plugins do Browser podem gerar node_modules)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Se houver arquivos de configuração para Docker
+*.env
+docker-compose.override.yml
+
+# Adicione aqui quaisquer outras pastas/arquivos
+# que você não quer versionar.
+log.html
+output.xml
+playwright-log.txt
+report.html

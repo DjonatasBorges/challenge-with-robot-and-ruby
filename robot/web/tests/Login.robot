@@ -1,30 +1,20 @@
 *** Settings ***
 Documentation        Login Test Suite
 
-Resource         ../../resource/Base.robot
-
+Resource         ../resources/Base.robot
 
 Test Setup       Start Session
 Test Teardown    After Test
 
 *** Test Cases ***
-User Login
+Login efetuado com sucesso
+    Dado que estou na tela de Login
+    Quando eu informo um usuário e senha válidos
+    E submeto o login
+    Então devo ser autenticado e visualizar o Dashboard
 
-    [Tags]        smoke
-    
-    ${user}                   Create Dictionary        user=Admin        password=admin123
-    
-    Go to Login Page
-    Fill Credentials        ${user}
-    Submit Credentials
-    User Should Be Logged In    ${user}
-
-Incorrect Pass
-    [Tags]    i_pass
-
-    ${user}        Create Dictionary        user=teste        password=abcdef123
-
-    Go to Login Page
-    Fill Credentials    ${user}
-    Submit Credentials
-    Modal Content Should Be    Usuário e/ou senha inválidos.
+Erro ao efetuar Login devido a erro de credenciais
+    Dado que estou na tela de Login
+    Quando eu informo um usuário e/ou senha inválidos
+    E submeto o login
+    Então Devo receber um alerta de "Invalid Credentials"
