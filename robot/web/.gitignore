@@ -91,3 +91,6 @@ docker-compose.override.yml
 
 # Adicione aqui quaisquer outras pastas/arquivos
 # que você não quer versionar.
+output.xml
+playwright-log.txt
+report.htmloutput.xml

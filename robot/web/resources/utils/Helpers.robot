@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation        Test Helpers
 
-Resource   ../resources/Base.robot
+Resource   ../Base.robot
 
 *** Keywords ***
 Dado que eu esteja logado

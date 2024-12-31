@@ -1,27 +1,26 @@
 *** Settings ***
-Library               Collections
-Library               RequestsLibrary
-
-*** Variables ***
-${BASE_URL}           https://viacep.com.br/ws
-${CEP_VALIDO}         01001000
-${CEP_INVALIDO}       00000000
-${RESPONSE}           ''
+Resource       ../Base.robot
 
 *** Keywords ***
+Dado que eu tenho um CEP válido
+    Set Test Variable    ${CEP}    01001-000
 
-# -------------------- Keywords de Teste --------------------
+Dado que eu tenho um CEP inválido
+    Set Test Variable    ${CEP}    99999-999
+
+Dado que eu tenho um CEP incompleto
+    Set Test Variable    ${CEP}    01001
 
 Quando envio uma requisição para o CEP válido
-    ${response}=    GET    ${BASE_URL}/${CEP_VALIDO}/json/    expected_status=Anything
+    ${response}=    GET    ${BASE_URL}/${CEP}/json/    expected_status=Anything
     Set Global Variable    ${response}    ${RESPONSE}
 
 Quando envio uma requisição para o CEP inválido
-    ${response}=    GET    ${BASE_URL}/${CEP_INVALIDO}/json/    expected_status=Anything
+    ${response}=    GET    ${BASE_URL}/${CEP}/json/    expected_status=Anything
     Set Global Variable    ${response}    ${RESPONSE}
 
 Quando envio uma requisição para um CEP incompleto
-    ${response}=    GET    ${BASE_URL}/12345/json/    expected_status=Anything
+    ${response}=    GET    ${BASE_URL}/${CEP}/json/    expected_status=Anything
     Set Global Variable    ${response}    ${RESPONSE}
 
 Então a API deve retornar status 200

@@ -8,7 +8,7 @@ Resource   actions/LoginActions.robot
 Resource   actions/LogoutActions.robot
 Resource   actions/AdminActions.robot
 
-Resource   Helpers.robot
+Resource   utils/Helpers.robot
 
 
 *** Variables ***

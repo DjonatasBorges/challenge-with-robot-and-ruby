@@ -72,7 +72,8 @@ Então o resultado da busca deve exibir o usuário correspondente
     Quando eu opto por excluir esse usuário
 
 Quando eu pesquiso por um Username que não existe
-    Fill Text    ${USERNAME_FIELD}    Undefined User
+    Sleep    2s
+    Fill Text    ${USERNAME_FIELD}        unexpected
     Click        ${SEARCH_BUTTON}
 
 Então o sistema deve indicar que nenhum registro foi encontrado

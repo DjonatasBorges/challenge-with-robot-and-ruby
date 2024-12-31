@@ -1,11 +1,11 @@
 *** Settings ***
 
-Resource    ../resources/ApiResource.robot
+Resource    ../resources/Base.robot
 
 *** Test Cases ***
 
 Cenário: Consultar CEP válido
-    [Documentation]    Como usuário, quero consultar um CEP válido na API e validar as informações retornadas.
+    Dado que eu tenho um CEP válido
     Quando envio uma requisição para o CEP válido
     Então a API deve retornar status 200
     E o logradouro deve ser    Praça da Sé
@@ -15,12 +15,12 @@ Cenário: Consultar CEP válido
     E a UF deve ser    SP
 
 Cenário: Consultar CEP inválido
-    [Documentation]    Como usuário, quero consultar um CEP inválido na API e validar que o erro é retornado.
+    Dado que eu tenho um CEP inválido
     Quando envio uma requisição para o CEP inválido
     Então a API deve retornar status 200
     E a mensagem de erro deve ser    true
 
 Cenário: Consultar CEP incompleto
-    [Documentation]    Como usuário, quero consultar um CEP incompleto na API e validar o status retornado.
+    Dado que eu tenho um CEP incompleto
     Quando envio uma requisição para um CEP incompleto
     Então a API deve retornar status 400
